@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="12b3ced8-2e13-49a4-9482-fcf32a1ff488" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://ec2-54-254-233-245.ap-southeast-1.compute.amazonaws.com/Ink.CandidateTest_deploy/Service1.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Booking.wsdl" MetadataType="Wsdl" ID="74fe3889-4191-4eb6-9f60-ab0aefc1ad69" SourceId="1" SourceUrl="http://ec2-54-254-233-245.ap-southeast-1.compute.amazonaws.com/Ink.CandidateTest_deploy/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="31441101-ddd7-4f6d-b098-99270c3da3ed" SourceId="1" SourceUrl="http://ec2-54-254-233-245.ap-southeast-1.compute.amazonaws.com/Ink.CandidateTest_deploy/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="4cac86c1-32da-46b2-81fc-d2369fa49980" SourceId="1" SourceUrl="http://ec2-54-254-233-245.ap-southeast-1.compute.amazonaws.com/Ink.CandidateTest_deploy/Service1.svc?disco" />
+    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="87d7d22e-afbb-4509-a11e-9ef08376fa23" SourceId="1" SourceUrl="http://ec2-54-254-233-245.ap-southeast-1.compute.amazonaws.com/Ink.CandidateTest_deploy/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="5754ca01-172d-4f67-bff6-a3641da4ae3b" SourceId="1" SourceUrl="http://ec2-54-254-233-245.ap-southeast-1.compute.amazonaws.com/Ink.CandidateTest_deploy/Service1.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

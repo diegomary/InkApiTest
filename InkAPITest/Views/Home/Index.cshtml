@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-2.1.0.intellisense.js"></script>
+    <script src="~/Scripts/jquery-2.1.0.js"></script>
+    <script src="~/Scripts/jquery-ui-1.10.4.js"></script>
+    <link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" />
+    <title>Index</title>
+    <script type="text/javascript">
+        $().ready(function () {          
+            $("#SendFlight").click(SendFlightRequest);
+        });
+        function getDateFromAspString(aspString) {
+            var epochMilliseconds = aspString.replace(
+                /^\/Date\(([0-9]+)([+-][0-9]{4})?\)\/$/,
+                '$1');
+            if (epochMilliseconds != aspString) {
+                return new Date(parseInt(epochMilliseconds));
+            }
+        }  
+        function SendFlightRequest() {
+            var datatosend = { Origin: $("#origin").val(), Destination: $("#destination").val(), DepartureDate: $("#depdate").val(), ReturnDate: $("#retdate").val() };
+            $.ajax({                
+                url: "http://localhost:6980/api/service/PostFlight/",
+                type: "POST",
+                contenttype: "application/json; charset=utf-8",
+                data: datatosend,
+                beforeSend: function () {},
+                success: function (result) {
+                    var d = $.parseJSON(result);
+                    for (var i = 0; i < d.length; i++) {
+                        var result=  "Departure from " +  d[i].DepartureStation  +' at: ' +  (getDateFromAspString(d[i].DepartureTime)) + 
+                        " Arrival to " + d[i].ArrivalStation + ' at: ' + (getDateFromAspString(d[i].ArrivalTime))
+                        $("#divresponse").val( $("#divresponse").val() + result+'\n'+'\n');                    
+                    }                   
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="divrequest" style="width:480px">
+        <input type="text" id="origin" value="SYD" />
+        <br />
+        <input type="text" id="destination" value="MEL" />
+        <br />
+        <input type="text" id="depdate" value="October 20, 2013 1:00:00" />
+        <br />
+        <input type="text" id="retdate" value="October 23, 2013 1:00:00" />
+        <br />
+        <p><input style="width:140px;" type="button" value="Send Flight Request" id="SendFlight"></p>
+        <textarea rows="20" cols="40" id="divresponse"></textarea>
+    </div>
+
+</body>
+</html>
